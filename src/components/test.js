@@ -19,10 +19,10 @@ import {render} from "react-dom";
 }
 
 class TestStore{
-   @observable testData='sfsdkfjsdkfj';
+   @observable testData='sfsdkfjsdkfj'; //注册一个mobx监听的数据
     constructor() {
     }
-    @action changeData2(){
+    @action changeData2(){  //注册一个改变数据的行为
 
       this.testData='woshizhoucongmni';
     }
@@ -36,7 +36,7 @@ class TestStore{
   constructor(props) {
     super(props);
     this.store=this.props.store;
-    this.changeData=this.store.changeData.bind(this.store);
+    this.changeData=this.store.changeData.bind(this.store);//bind store 才能使数据实时帅醒
   }
   componentWillMount() {
     this.props.store.changeData2();
