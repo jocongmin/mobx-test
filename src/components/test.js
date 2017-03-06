@@ -4,19 +4,6 @@ import {observable,action} from "mobx";
 import React from "react";
 import {render} from "react-dom";
 
-@observer class Timer extends React.Component {
-    @observable secondsPassed = 0
-
-    componentWillMount() {
-        setInterval(() => {
-            this.secondsPassed++
-        }, 1000)
-    }
-
-    render() {
-        return (<span>Seconds passed: { this.secondsPassed } </span> )
-    }
-}
 
 class TestStore{
    @observable testData='sfsdkfjsdkfj'; //注册一个mobx监听的数据
@@ -27,8 +14,9 @@ class TestStore{
       this.testData='woshizhoucongmni';
     }
     @action changeData(){
-      console.log('skldjfskldfj')
-      this.testData='sdfs;dfsdlksldfkjskfdjs64654654';
+      console.log('skldjfskldfj');
+      var num=Math.random()*1000;
+      this.testData=num;
     }
 }
 
