@@ -1,26 +1,12 @@
 import {observer} from "mobx-react";
-import {observable,action} from "mobx";
+import {observable,action,computed} from "mobx";
 
 import React from "react";
 import {render} from "react-dom";
 
 
-class TestStore{
-   @observable testData='sfsdkfjsdkfj'; //注册一个mobx监听的数据
-    constructor() {
-    }
-    @action changeData2(){  //注册一个改变数据的行为
-
-      this.testData='woshizhoucongmni';
-    }
-    @action changeData(){
-      console.log('skldjfskldfj');
-      var num=Math.random()*1000;
-      this.testData=num;
-    }
-}
-
-@observer class Test extends React.Component{
+@observer 
+export default class Test extends React.Component{
   constructor(props) {
     super(props);
     this.store=this.props.store;
@@ -36,5 +22,3 @@ class TestStore{
     </div>
   }
 }
-let store=new TestStore();
-render(< Test store={store}/>, document.getElementById('app'));
