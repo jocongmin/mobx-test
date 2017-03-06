@@ -6,6 +6,10 @@ export default class NextStore {
         this.todoValue=25;
     }
     @action todoSm(cs){
-        this.todoValue=50*cs;
+        this.todoValue=this.todoValue*cs;
+        this.hotTest(this.todoValue);
+    }
+    @action hotTest(vs){
+    	this.todoValue=465465*vs;
     }
 }

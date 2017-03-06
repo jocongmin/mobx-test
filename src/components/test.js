@@ -13,7 +13,7 @@ export default class Test extends React.Component{
     this.changeData=this.store.changeData.bind(this.store);//bind store 才能使数据实时帅醒
   }
   componentWillMount() {
-    this.props.store.changeData2();
+    this.store.changeData2();
   }
   render(){
     return <div>
