@@ -4,11 +4,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-new webpack.DefinePlugin({
-    "process.env": {
-        NODE_ENV: JSON.stringify("production")
-    }
-})
+
 const config = {
     entry: {
         app: ["./index.js"]
@@ -46,7 +42,15 @@ const config = {
         }]
     },
     plugins: [
+        new webpack.DefinePlugin({
+            'process.env': {
+                NODE_ENV: JSON.stringify("production"),
+            },
+        }),
         new webpack.optimize.UglifyJsPlugin({
+            output: {
+                comments: false,
+            },
             compress: {
                 warnings: false
             }
@@ -58,7 +62,7 @@ const config = {
             { from: __dirname + '/scss', to: __dirname + '/dist/scss' },
             { from: __dirname + '/img', to: __dirname + '/dist/img' },
             { from: __dirname + '/index.html', to: __dirname + '/dist/index.html' },
-        ])
+        ]),
         /*new HtmlWebpackPlugin({
             title: 'index',
             hash:true,

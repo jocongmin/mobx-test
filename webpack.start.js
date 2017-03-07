@@ -21,7 +21,7 @@ const config = {
     module: {
         rules: [{
             test: /\.jsx?$/,
-            use: ['react-hot-loader', {
+            use: ['react-hot-loader', { 
                 loader: 'babel-loader',
                 options: {
                     presets: ['es2015', 'es2016', 'es2017', 'stage-0', 'react'],
