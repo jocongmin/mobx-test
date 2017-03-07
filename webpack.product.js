@@ -1,15 +1,20 @@
 var webpack = require('webpack');
-var webpackUglifyJsPlugin = require('webpack-uglify-js-plugin');
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-
+var CopyWebpackPlugin = require('copy-webpack-plugin');
+new webpack.DefinePlugin({
+    "process.env": {
+        NODE_ENV: JSON.stringify("production")
+    }
+})
 const config = {
     entry: {
         app: ["./index.js"]
     },
     output: { //输出目录
-        path: __dirname,
+        path: __dirname + './dist/',
         publicPath: "",
         filename: 'bundle.js',
     },
@@ -41,20 +46,19 @@ const config = {
         }]
     },
     plugins: [
-        new webpackUglifyJsPlugin({
-            cacheFolder: path.resolve(__dirname, 'public/cached_uglify/'),
-            debug: true,
-            minimize: true,
-            sourceMap: false,
-            output: {
-                comments: false
-            },
-            compressor: {
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
                 warnings: false
             }
         }),
-        new webpack.HotModuleReplacementPlugin(),
-        new ExtractTextPlugin('css/style.css')
+        new ExtractTextPlugin('css/style.css'),
+        new CopyWebpackPlugin([
+            // {output}/file.txt
+            { from: __dirname + '/bundle.js', to: __dirname + '/dist' },
+            { from: __dirname + '/scss', to: __dirname + '/dist/scss' },
+            { from: __dirname + '/img', to: __dirname + '/dist/img' },
+            { from: __dirname + '/index.html', to: __dirname + '/dist/index.html' },
+        ])
         /*new HtmlWebpackPlugin({
             title: 'index',
             hash:true,
