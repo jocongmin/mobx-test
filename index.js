@@ -13,9 +13,9 @@ class App extends React.Component {
         return (
              <Provider {...store}>
                  <Router history={hashHistory}>
-                     <Route path="/" component={Next}/>
+                     <Route path="/" component={New}/>
                      <Route path="/test" component={Test}/>
-                     <Route path="/new" component={New}/>
+                     <Route path="/next" component={Next}/>
                  </Router>
              </Provider>
          )
