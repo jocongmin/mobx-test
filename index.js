@@ -6,6 +6,7 @@ import { Router, Route, hashHistory } from 'react-router';
 import Test from "./src/components/test.js";
 import Next from "./src/components/next.js";
 import New from "./src/components/new.js";
+import Forms from "./src/components/form.js";
 import store from "./src/store/store.js";
 
 class App extends React.Component {
@@ -13,7 +14,8 @@ class App extends React.Component {
         return (
              <Provider {...store}>
                  <Router history={hashHistory}>
-                     <Route path="/" component={New}/>
+                     <Route path="/" component={Forms}/>
+                     <Route path="/new" component={New}/>
                      <Route path="/test" component={Test}/>
                      <Route path="/next" component={Next}/>
                  </Router>

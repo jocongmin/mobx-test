@@ -4,7 +4,7 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
-var developConfig=require('./webpack.start.js');
+var developConfig = require('./webpack.start.js');
 const config = {
     entry: {
         app: ["./index.js"]
@@ -17,9 +17,9 @@ const config = {
     module: developConfig.module,
     plugins: [
         new webpack.DefinePlugin({
-            'process.env': {
-                NODE_ENV: JSON.stringify('production'),
-            },
+            "process.env": {
+                NODE_ENV: JSON.stringify("production")
+            }
         }),
         new webpack.optimize.UglifyJsPlugin({
             output: {
