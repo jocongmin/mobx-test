@@ -17,9 +17,7 @@ const config = {
     module: developConfig.module,
     plugins: [
         new webpack.DefinePlugin({
-            "process.env": {
-                NODE_ENV: JSON.stringify("production")
-            }
+            'process.env.NODE_ENV': '"production"'
         }),
         new webpack.optimize.UglifyJsPlugin({
             output: {

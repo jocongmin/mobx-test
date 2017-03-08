@@ -14,14 +14,14 @@ const config = {
         "./index.js",
     ],
     output: { //输出目录
+        publicPath: "http://0.0.0.0:8087/",
         path: __dirname,
-        publicPath: "",
         filename: 'bundle.js',
     },
     module: {
         rules: [{
             test: /\.jsx?$/,
-            use: ['react-hot-loader', { 
+            use: ['react-hot-loader', {
                 loader: 'babel-loader',
                 options: {
                     presets: ['es2015', 'es2016', 'es2017', 'stage-0', 'react'],
@@ -46,6 +46,9 @@ const config = {
         }]
     },
     plugins: [
+        new webpack.DefinePlugin({
+            'process.env.NODE_ENV': '"development"'
+        }),
         new webpack.HotModuleReplacementPlugin(),
         new ExtractTextPlugin('css/style.css')
         /*new HtmlWebpackPlugin({

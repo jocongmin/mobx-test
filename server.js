@@ -8,8 +8,9 @@ var server = new WebpackDevServer(compiler, {
     stats: {
         host:'0.0.0.0',
         colors: true,
-        hot:true,
+        inline:true,
         progress:true,
+        contentBase:'./'
     }
 });
 server.listen(8087);
