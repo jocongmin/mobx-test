@@ -10,6 +10,8 @@ export default class Forms extends Component{
     super(props);
     this.store=this.props.formStore;
     this.sendValue=this.store.getValue.bind(this.store,event);
+    this.subForm=this.store.subForm.bind(this.store,event);
+    this.hideTip=this.store.hideTip.bind(this.store,event);
   }
   render(){
     return(
@@ -55,6 +57,14 @@ export default class Forms extends Component{
                     <em className="iright"></em>
                 </li>
             </ul>
+            <div className="act-explain">
+                <div className="titbar">
+                    <em>活动说明</em>
+                </div>
+                <textarea onBlur={this.sendValue} className="area" name="explain" id="" cols="30" rows="5" placeholder="请填写活动说明"></textarea>
+            </div>
+            <div onClick={this.subForm}>sub</div>
+            <div onClick={this.hideTip} className={this.store.tip.state?'':'unsee'}>{this.store.tip.content}</div>
         </div>
       )
   }

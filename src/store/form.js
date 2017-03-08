@@ -6,17 +6,23 @@ export default class FormStore {
     @observable contact;
     @observable room;
     @observable file;
-    @observable imgSrc;
+    @observable explain;
+    @observable tip;
     constructor() {
+        this.formData = {};
+        this.tip = {
+            state: false,
+            content: ''
+        };
         this.title = '';
         this.time = '';
         this.contact = '';
         this.room = '';
-        this.file = 'img';
-        this.imgSrc='';
+        this.file = '';
+        this.explain = '';
     }
     @action getValue(s, e) {
-        var that=this;
+        var that = this;
         let val = e.currentTarget.value;
         let name = e.currentTarget.name;
         if (name == 'title') this.title = val;
@@ -24,13 +30,60 @@ export default class FormStore {
         if (name == 'contact') this.contact = val;
         if (name == 'room') this.room = val;
         if (name == 'file') {
-            var imgFile=e.currentTarget.files[0];
-            var reader = new FileReader();// 通过这个可以把路径图片转为base64 ，然后在img中预览
+            var imgFile = e.currentTarget.files[0];
+            var reader = new FileReader(); // 通过这个可以把路径图片转为base64 ，然后在img中预览
             reader.readAsDataURL(imgFile);
             reader.onload = function(evt) {
-                that.file= evt.target.result;
+                that.file = evt.target.result;
             }
         }
-        console.log(val);
+        if (name == 'explain') this.explain = val;
+    }
+    @action subForm() {
+        this.formDataFn();
+    }
+
+    @action formDataFn() {
+        this.formData['title'] = this.title;
+        this.formData['time'] = this.time;
+        this.formData['contact'] = this.contact;
+        this.formData['room'] = this.room;
+        this.formData['file'] = this.file;
+        this.formData['explain'] = this.explain;
+        var formData = this.formData;
+        this.valid(formData);
+    }
+    valid(formData) {
+        for (var item in formData) {
+            if (formData[item] == '') {
+                this.tip.state = true;
+                switch (item) {
+                    case 'title':
+                        this.tip.content = '题目不能为空，请输入题目';
+                        break;
+                    case 'time':
+                        this.tip.content = '时间不能为空，请输入时间';
+                        break;
+                    case 'contact':
+                        this.tip.content = '联系方式不能为空，请输入联系方式';
+                        break;
+                    case 'room':
+                        this.tip.content = '房间号不能为空，请选择房间号';
+                        break;
+                    case 'file':
+                        this.tip.content = '头像图片不能为空，请选择头像图片';
+                        break;
+                    case 'explain':
+                        this.tip.content = '活动说明不能为空，请选择活动说明';
+                        break;
+                }
+            }
+        }
+    }
+    @action hideTip() {
+        this.tip = {
+            state: false,
+            content: ''
+        }
     }
 }
