@@ -1,16 +1,27 @@
-var config = require("./webpack.start.js");
-var webpack = require('webpack');
-var WebpackDevServer = require('webpack-dev-server');
-
-var compiler = webpack(config);
-var server = new WebpackDevServer(compiler, {
+var webpack = require('webpack'),
+    webpackDevMiddleware = require('webpack-dev-middleware'),
+    webpackHotMiddleware = require('webpack-hot-middleware'),
+    config = require("./webpack.start.js"),
+    express = require('express'),
+    app = express(),
+    compiler = webpack(config);
+    var reload = require('reload');
+app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
+    noInfo: true,
     stats: {
-        host:'0.0.0.0',
         colors: true,
-        inline:true,
-        progress:true,
-        contentBase:'./'
+        progress: true
     }
-});
-server.listen(8087);
+}));
+app.use(webpackHotMiddleware(compiler, {
+    noInfo: true,
+    publicPath: config.output.publicPath
+}));
+
+app.get('/', function(req, res) {
+  res.sendFile(__dirname + '/index.html');
+})
+
+app.listen(8087);
+

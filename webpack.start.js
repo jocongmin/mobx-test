@@ -4,12 +4,9 @@ const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 
-
 const config = {
     entry: [
-        // 写在入口文件之前
-        "webpack-dev-server/client?http://0.0.0.0:8087",
-        "webpack/hot/only-dev-server",
+        "webpack-hot-middleware/client?reload=true",
         // 这里是你的入口文件
         "./index.js",
     ],
@@ -46,10 +43,9 @@ const config = {
         }]
     },
     plugins: [
-        new webpack.DefinePlugin({
-            'process.env.NODE_ENV': '"development"'
-        }),
+        new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
+        new webpack.NoEmitOnErrorsPlugin(),
         new ExtractTextPlugin('css/style.css')
         /*new HtmlWebpackPlugin({
             title: 'index',
