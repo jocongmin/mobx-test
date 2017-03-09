@@ -11,7 +11,7 @@ const config = {
         "./index.js",
     ],
     output: { //输出目录
-        publicPath: "http://0.0.0.0:8087/",
+        publicPath: "",
         path: __dirname,
         filename: 'bundle.js',
     },

@@ -25,40 +25,40 @@ export default class Forms extends Component{
                 <div className="sub-pic">
                     <div className="box">
                         <div className="tmask">
-                            <span className="ipt-box"><input type="file"/></span>
+                            <span className="ipt-box"><input name='file' onChange={this.sendValue} type="file"/></span>
                         </div>
-                        <img src="img/fq-act-banner.png" alt=""/>
+                        <img src={this.store.file} alt=""/>
                     </div>
                 </div>
                 <ul className="items">
                     <li className="item-tit flex">
                         <i className="icon"></i>
-                        <input type="text" className="flex1"  placeholder="请输入活动标题"/>
+                        <input type="text" name='title' onChange={this.sendValue} className="flex1"  placeholder="请输入活动标题"/>
                     </li>
                     <li className="item-time flex">
                         <i className="icon"></i>
-                        <span className="flex1">
-                            请选择活动时间
-                            <input type="datetime-local"  placeholder="请选择活动时间"/>
+                        <span className={this.store.time?'flex1 on':'flex1'}>
+                            {this.store.time?this.store.time:'请选择活动时间'}
+                            <input name='time' onChange={this.sendValue} type="datetime-local"  placeholder="请选择活动时间"/>
                         </span>
                         <em className="iright"></em>
                     </li>
                     <li className="item-ph flex">
                         <i className="icon"></i>
-                        <input type="tel" className="flex1"  placeholder="请输入联系方式"/>
+                        <input name='contact' onChange={this.sendValue} type="tel" className="flex1"  placeholder="请输入联系方式"/>
                     </li>
                     <li className="item-room flex">
                         <i className="icon"></i>
-                        <span className="flex1">
-                            请选择包间
-                            <select name="" id="" className="flex1">
-                            <option value="第一间">第一间</option>
-                            <option value="第一间">第一间</option>
-                            <option value="第一间">第一间</option>
-                            <option value="第一间">第一间</option>
-                            <option value="第一间">第一间</option>
-                            <option value="第一间">第一间</option>
-                        </select>
+                        <span className={this.store.room?'flex1 on':'flex1'}>
+                            {this.store.room?this.store.room:'请选择包间'}
+                            <select name='room' onChange={this.sendValue} id="" className="flex1">
+                                <option value="第一间">第一间</option>
+                                <option value="第一间">第一间</option>
+                                <option value="第一间">第一间</option>
+                                <option value="第一间">第一间</option>
+                                <option value="第一间">第一间</option>
+                                <option value="第一间">第一间</option>
+                            </select>
                         </span>
                         <em className="iright"></em>
                     </li>
@@ -67,21 +67,19 @@ export default class Forms extends Component{
                     <div className="titbar">
                         <em>活动说明</em>
                     </div>
-                    <textarea className="area" name="" id="" cols="30" rows="5" placeholder="请填写活动说明"></textarea>
+                    <textarea name='explain' onChange={this.sendValue} className="area" id="" cols="30" rows="5" placeholder="请填写活动说明"></textarea>
                 </div>
                 <p className="mark">
                     备注：每发起一场活动将消耗100积分。
                 </p>
             </div>
-            <div className="fixed fq-footer">
+            <div onClick={this.subForm} className="fixed fq-footer">
                 发起(-<em>100</em>积分)
             </div>
-            <div className="tip-tc">
-                成功发起活动
+            <div className={this.store.tip.state?'tip-tc':'tip-tc unsee'}>
+                {this.store.tip.content}
             </div>
-            <div className="tip-tc unsee">
-                发起失败，请重新核对
-            </div>
+            
         </div>
       )
   }

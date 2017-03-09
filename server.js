@@ -27,5 +27,5 @@ app.get('*', function(req, res) {
         res.sendFile(__dirname + fileName);
     }
 });
-app.listen(8087);
+app.listen(8087,'0.0.0.0');
 

@@ -38,6 +38,7 @@ export default class FormStore {
             }
         }
         if (name == 'explain') this.explain = val;
+        console.log(this.room, this.time, this.contact)
     }
     @action subForm() {
         this.formDataFn();
@@ -54,6 +55,7 @@ export default class FormStore {
         this.valid(formData);
     }
     valid(formData) {
+        var that = this;
         for (var item in formData) {
             if (formData[item] == '') {
                 this.tip.state = true;
@@ -76,14 +78,25 @@ export default class FormStore {
                     case 'explain':
                         this.tip.content = '活动说明不能为空，请选择活动说明';
                         break;
+                };
+                that.hideTip();
+                return false;
+            } else {
+                this.tip={
+                    state:true,
+                    content:'发起活动成功'
                 }
+                that.hideTip();
             }
         }
     }
     @action hideTip() {
-        this.tip = {
-            state: false,
-            content: ''
-        }
+        setTimeout(() => {
+            this.tip = {
+                state: false,
+                content: ''
+            }
+        }, 1500);
+
     }
 }

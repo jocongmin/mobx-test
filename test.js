@@ -9,4 +9,4 @@ app.get('*', function(req, res) {
     	res.sendFile(__dirname + fileName);
     }
 });
-app.listen(9999);
+app.listen(9999,'0.0.0.0');
