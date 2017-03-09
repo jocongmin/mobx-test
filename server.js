@@ -5,7 +5,6 @@ var webpack = require('webpack'),
     express = require('express'),
     app = express(),
     compiler = webpack(config);
-    var reload = require('reload');
 app.use(webpackDevMiddleware(compiler, {
     publicPath: config.output.publicPath,
     noInfo: true,
