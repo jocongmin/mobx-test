@@ -7,7 +7,7 @@
     "start": "node server.js",
     "build": "NODE_ENV=production&&npm run output",
     "output": "webpack --config webpack.build.js",
-    "test":"node ./dist/test.js"
+    "test": "node ./dist/test.js"
   },
   "keywords": [],
   "author": "",
@@ -39,6 +39,7 @@
     "style-loader": "^0.13.2",
     "uglifyjs-webpack-plugin": "^0.3.0",
     "webpack": "^2.2.1",
+    "webpack-del-plugin": "^0.0.1",
     "webpack-dev-middleware": "^1.10.1",
     "webpack-dev-server": "^2.4.1",
     "webpack-hot-middleware": "^2.17.1",

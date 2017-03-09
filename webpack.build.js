@@ -5,14 +5,16 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CopyWebpackPlugin = require('copy-webpack-plugin');
 var developConfig = require('./webpack.start.js');
+const WebpackDelPlugin = require('webpack-del-plugin');
+var baseUrl = __dirname;
 const config = {
     entry: {
-       app:['./index.js']
+        app: ['./index.js']
     },
     output: { //输出目录
-        path: __dirname,
-        publicPath: "",
-        filename: 'bundle.js',
+        path: __dirname + "/dist",
+        publicPath: "/",
+        filename: 'bundle[hash].js',
     },
     module: {
         rules: [{
@@ -43,7 +45,7 @@ const config = {
     },
     plugins: [
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': '"production"'
+            'process.env.NODE_ENV': "production"
         }),
         new webpack.optimize.UglifyJsPlugin({
             output: {
@@ -53,19 +55,16 @@ const config = {
                 warnings: false
             }
         }),
-        new ExtractTextPlugin('css/style.css'),
-        new CopyWebpackPlugin([
-            { from: __dirname + '/scss', to: __dirname + '/dist/scss' },
-            { from: __dirname + '/bundle.js', to: __dirname + '/dist/bundle.js' },
-            { from: __dirname + '/test.js', to: __dirname + '/dist/test.js' },
-            { from: __dirname + '/img', to: __dirname + '/dist/img' },
-            { from: __dirname + '/index.html', to: __dirname + '/dist/index.html' },
-        ]),
-        /*new HtmlWebpackPlugin({
+        new WebpackDelPlugin({ match: path.join(baseUrl, '/dist') }),
+        new HtmlWebpackPlugin({
             title: 'index',
-            hash:true,
+            hash: false,
             template: 'index.ejs', // Load a custom template (ejs by default see the FAQ for details)
-        })*/
+        }),
+        new ExtractTextPlugin('css/style[hash].css'),
+        new CopyWebpackPlugin([
+            { from: baseUrl + '/test.js', to: baseUrl + '/dist/test.js' },
+        ]),
     ]
 };
 module.exports = config;
