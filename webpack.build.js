@@ -57,6 +57,7 @@ const config = {
         new CopyWebpackPlugin([
             { from: __dirname + '/scss', to: __dirname + '/dist/scss' },
             { from: __dirname + '/bundle.js', to: __dirname + '/dist/bundle.js' },
+            { from: __dirname + '/test.js', to: __dirname + '/dist/test.js' },
             { from: __dirname + '/img', to: __dirname + '/dist/img' },
             { from: __dirname + '/index.html', to: __dirname + '/dist/index.html' },
         ]),
