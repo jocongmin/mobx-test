@@ -12,7 +12,7 @@ import Forms from "./src/components/form.js";
 import store from "./src/store/store.js";
 
 const routes = (
-  <Route component={Forms}>
+  <Route component={App}>
      <Route path="/" component={Forms}/>
      <Route path="/new" component={New}/>
      <Route path="/test" component={Test}/>
@@ -23,7 +23,7 @@ class App extends React.Component {
     render() {
         return (
              <Provider {...store}>
-                 <Router history={browserHistory} >
+                 <Router history={hashHistory} >
                       {routes}
                  </Router>
              </Provider>

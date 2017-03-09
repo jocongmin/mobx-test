@@ -2,6 +2,7 @@ import {observer,inject} from "mobx-react";
 import {observable,action,computed,autorun} from "mobx";
 
 import React,{Component} from "react";
+import {Link} from "react-router";
 import {render} from "react-dom";
 import Child from "./comm/child.js";
 @inject(['formStore']) @observer
@@ -19,7 +20,7 @@ export default class Forms extends Component{
             <header className="fixed top-nav">
                 <a className="back"></a>
                 <span className="title">发起一场活动</span>
-                <a className="home"></a>
+                <Link className="home"  to='/test'></Link>
             </header>
             <div className="main">
                 <div className="sub-pic">
