@@ -157,11 +157,4 @@ var adaptUILayout = (function() {
  *640为当期页面指定的统一分辨率，其他分辨率下均为此分辨率的放缩变化
  */
 /*adaptUILayout.adapt(640); */
-window.onload = function() {
-    var body = document.getElementsByTagName('body')[0];
-    console.log(body)
-    var script = document.createElement('script');
-    var ip=window.location.hostname;
-    script.setAttribute('src','css.bundle.js');
-    body.appendChild(script);
-}
+

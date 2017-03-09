@@ -18,9 +18,14 @@ app.use(webpackHotMiddleware(compiler, {
     publicPath: config.output.publicPath
 }));
 
-app.get('/', function(req, res) {
-  res.sendFile(__dirname + '/index.html');
-})
-
+app.get('*', function(req, res) {
+    var fileName = req.url;
+    console.log(fileName);
+    if (fileName == '/') {
+        res.sendFile(__dirname + '/index.html');
+    }else{
+        res.sendFile(__dirname + fileName);
+    }
+});
 app.listen(8087);
 

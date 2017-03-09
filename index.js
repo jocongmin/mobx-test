@@ -1,3 +1,4 @@
+import "./js/auto_rem.js";
 import "./css/style.scss";
 import React from "react";
 import { render } from "react-dom";
