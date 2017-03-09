@@ -1,0 +1,90 @@
+.my-integral-body {
+    .top {
+        background: url(../img/integral-bg.png) no-repeat;
+        background-size: 100% 100%;
+        height: 100px;
+        text-align: center;
+        padding: 5px 10px;
+        p {
+            color: #fff;
+        }
+        .tip {
+            text-align: right !important;
+            font-size: 12px;
+            .question {
+                @extend .bg-question-white;
+                display: inline-block;
+                position: relative;
+                top: 3px;
+                margin-left: 3px;
+            }
+        }
+        .current {
+            font-size: 12px;
+        }
+        .price {
+            font-weight: bold;
+            font-size: 30px;
+        }
+    }
+    .record {
+        font-size: 12px;
+        color: $fnormal;
+        padding: 10px;
+    }
+    .item-list {
+        background-color: #fff;
+        padding-left: 50px;
+        overflow: hidden;
+        .integral-box {
+            position: relative;
+            &:before {
+                content: "";
+                border-left: 1px solid #e1e1e1;
+                height: 100%;
+                position: absolute;
+                left: -23px;
+                top: 29px;
+                z-index: 1;
+            }
+            li {
+                padding: 10px 10px 10px 0;
+                border-bottom: 1px solid #e1e1e1;
+                align-items: center;
+                position: relative;
+                &:last-of-type {
+                    border-bottom: none;
+                }
+                .circle {
+                    display: inline-block;
+                    width: 8px;
+                    height: 8px;
+                    border-radius: 100%;
+                    background-color: #ffc62c;
+                    position: absolute;
+                    left: -26.5px;
+                    z-index: 5;
+                }
+                p {
+                    line-height: 23px;
+                }
+                .title {
+                    font-size: 15px;
+                    color: $fweight;
+                }
+                .date {
+                    font-size: 12px;
+                    color: $flight;
+                }
+                .add {
+                    font-size: 16px;
+                    color: #76cf2e;
+                }
+                .reduce {
+                    font-size: 16px;
+                    color: $hred;
+                }
+            }
+        }
+    }
+}

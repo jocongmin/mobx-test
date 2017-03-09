@@ -1,0 +1,223 @@
+@mixin bd($bc, $w, $h, $t, $l) {
+    content: "";
+    border: 2px solid $bc;
+    display: inline-block;
+    width: $w;
+    height: $h;
+    border-radius: 100%;
+    position: absolute;
+    top: $t;
+    left: $l;
+}
+
+.detail-panel {
+    width: 300px;
+    border-radius: 5px;
+    background-color: #fff;
+    z-index: 503;
+    .detail-title {
+        font-size: 16px;
+        color: $fweight;
+        font-weight: bold;
+        padding: 15px 20px;
+        position: relative;
+        border-bottom: 1px solid #e7e7e7;
+        .close {
+            display: inline-block;
+            position: absolute;
+            top: 21px;
+            right: 19px;
+            @extend .bg-close-xx;
+        }
+    }
+    .content {
+        font-size: 13px;
+        color: $fnormal;
+        padding: 10px 20px;
+    }
+    .context {
+        margin: 0 10px;
+        border-top: 1px solid #e7e7e7;
+        padding: 15px 0;
+        .d-box {
+            background-color: #e6f6fc;
+            padding: 15px 0;
+            li {
+                float: left;
+                text-align: center;
+                &:nth-of-type(2n) {
+                    width: 8%;
+                }
+                &:nth-of-type(2n+1) {
+                    width: 19%;
+                }
+                i {
+                    display: inline-block;
+                }
+                .copper {
+                    @extend .bg-copper-m;
+                }
+                .silver {
+                    @extend .bg-silver-m;
+                }
+                .gold {
+                    @extend .bg-gold-m;
+                }
+                .jewel {
+                    @extend .bg-jewel-m;
+                    margin-bottom: 6px;
+                }
+                .level-arrow {
+                    @extend .bg-level-arrow;
+                    position: relative;
+                    top: 7px;
+                }
+                span {
+                    display: block;
+                    font-size: 14px;
+                    color: $fweight;
+                }
+            }
+        }
+    }
+    .text {
+        text-align: center;
+        padding:15px 0;
+        .top-tip {
+            font-size: 17px;
+            color: $fnormal;
+        }
+        .date {
+            font-size: 21px;
+            color: $theme;
+            padding:3px 0;
+        }
+        .bottom-tip {
+            display: inline-block;
+            font-size: 15px;
+            color: $flight;
+            padding:10px 15px 0;
+            border-top:1px solid #e1e1e1;
+        }
+    }
+    .btn {
+        display: block;
+        width: 100%;
+        text-align: center;
+        color: #fff;
+        background-color: #ff5352;
+        height: 50px;
+        font-size: 18px;
+        line-height: 50px;
+        border-bottom-left-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+}
+
+.my-info-body {
+    .top {
+        height: 185px;
+        background: transparent url(../img/my-bg.png) no-repeat;
+        background-size: cover;
+        margin-bottom: 10px;
+        text-align: center;
+        padding-top: 30px;
+        .head-pic {
+            width: 80px;
+            height: 80px;
+            border-radius: 100%;
+            margin: 0 auto;
+            position: relative;
+            img {
+                width: 100%;
+                height: 100%;
+                border-radius: 100%;
+            }
+            &:before {
+                @include bd(#627eac, 80px, 80px, -2px, -2px);
+            }
+            &:after {
+                @include bd(#7fbdf5, 84px, 84px, -4px, -4px);
+            }
+        }
+        p {
+            color: #fff;
+        }
+        .name {
+            font-size: 18px;
+        }
+        .tit {
+            font-size: 13px;
+        }
+        .level {
+            display: inline-block;
+            position: relative;
+            left: 5px;
+            top: 9px;
+        }
+        .silver {
+            @extend .bg-silver-s;
+        }
+        .gold {
+            @extend .bg-gold-s;
+        }
+        .copper {
+            @extend .bg-copper-s;
+        }
+        .jewel {
+            @extend .bg-jewel-s;
+        }
+        .question {
+            top: 4px;
+            @extend .bg-question;
+        }
+    }
+    .center {
+        padding-bottom: $navh;
+    }
+    .tap {
+        font-size: 14px;
+        color: $fweight;
+        background-color: #fff;
+        padding-left: 10px;
+        line-height: 45px;
+        margin-bottom: 10px;
+        a {
+            border-bottom: 1px solid #e1e1e1;
+            align-items:center;
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+        .data {
+            margin-right: 7px;
+        }
+        .num {
+            font-size: 12px;
+            margin-right: 7px;
+            color: #fff;
+            background-color: $hred;
+            width: 22px;
+            height: 22px;
+            line-height: 23px;
+            text-align: center;
+            border-radius: 100%;
+        }
+        .more {
+            position: relative;
+            &:before {
+                content: "...";
+                color: #fff;
+                position: absolute;
+                left: 5px;
+                top: -4px;
+            }
+        }
+        .r-arrow {
+            display: inline-block;
+            @extend .bg-r-arrow;
+            margin-right: 10px;
+
+        }
+    }
+}

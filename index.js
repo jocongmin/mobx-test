@@ -1,3 +1,4 @@
+import "./css/style.scss";
 import React from "react";
 import { render } from "react-dom";
 import { observable, computed, autorun } from "mobx";
@@ -8,6 +9,7 @@ import Next from "./src/components/next.js";
 import New from "./src/components/new.js";
 import Forms from "./src/components/form.js";
 import store from "./src/store/store.js";
+
 const routes = (
   <Route component={Forms}>
      <Route path="/" component={Forms}/>

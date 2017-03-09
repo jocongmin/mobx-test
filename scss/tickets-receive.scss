@@ -1,0 +1,106 @@
+.receive-body {
+    height: 100%;
+    background: #2e2e34 url(../img/receive.png) no-repeat;
+    background-size: cover;
+    .container {
+        width: 84%;
+        margin: 0 auto;
+        padding-top: 8%;
+        position: relative;
+        .ticket-img {
+            position: relative;
+            .mb {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color: rgba(0, 0, 0, .48);
+            }
+            .tip {
+                margin-top: 2.5rem;
+                text-align: center;
+                color: #fff;
+                .head-img {
+                    display: inline-block;
+                    border-radius: 100%;
+                    background-color: #fff;
+                    margin: auto;
+                    img {
+                        width: 2.875rem;
+                        border-radius: 100%;
+                        margin: 2px;
+                    }
+                }
+                p {
+                    color: #fff !important;
+                }
+                .name {
+                    font-size: 0.6rem;
+                    margin-top: 0.25rem;
+                }
+                .title {
+                    font-size: 0.9rem;
+                    margin-top: 0.25rem;
+                }
+                .price {
+                    font-size: 0.75rem;
+                    margin-top: 0.25rem;
+                }
+            }
+        }
+        .text {
+            font-size: 14px;
+            background-color: #fff;
+            padding: 15px 15px 12px;
+            p {
+                line-height: 23px;
+            }
+            label {
+                display: inline-block;
+                width: 57px;
+                text-align: justify;
+                padding-right: 12px;
+                position: relative;
+                color: $flight;
+                overflow: hidden;
+                height: 23px;
+                &:before {
+                    content: ":";
+                    display: inline-block;
+                    position: absolute;
+                    right: 8px;
+                }
+                &:after {
+                    content: '';
+                    width: 100%;
+                    display: inline-block;
+                }
+            }
+            span {
+                color: $fweight;
+            }
+            .link {
+                display: block;
+                text-align: center;
+                color: #fff;
+                border-radius: 5px;
+                margin: 0 5px;
+                height: 40px;
+                line-height: 40px;
+                margin-top: 8px;
+            }
+            .orange {
+                background-color: #e64340;
+            }
+        }
+        .pic {
+            height: 9px;
+            background: url(../img/circle.png) repeat-x;
+            background-size: 15px 10px;
+            position: relative;
+            top: -1px;
+        }
+    }
+}

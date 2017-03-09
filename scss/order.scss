@@ -1,0 +1,83 @@
+    .order-box {
+        background-color: #fff;
+        font-size: 12px;
+        margin-bottom: 10px;
+        .info {
+            padding: 10px;
+            border-bottom: 1px solid #e7e7e7;
+            .title {
+                color: $flight;
+            }
+            .orange {
+                color: #ff7623;
+            }
+            .green {
+                color: #76cf2e;
+            }
+            .tit {
+                color: $fweight;
+            }
+        }
+        .content {
+            padding: 0 10px;
+            .item {
+                align-items: center;
+                padding: 10px 0;
+                border-bottom: 1px solid #e1e1e1;
+                &:last-of-type {
+                    border-bottom: none;
+                }
+                img {
+                    width: 60px;
+                    height: 60px;
+                    margin-right: 10px;
+                }
+                .name {
+                    color: $fnormal !important;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 1;
+                    -webkit-box-orient: vertical;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    padding-right: 10px;
+                }
+                .text {
+                    text-align: right;
+                    p {
+                        color: $fnormal !important;
+                    }
+                }
+            }
+        }
+        .count {
+            padding: 7px 10px;
+            border-top: 1px solid #e7e7e7;
+            color: $fnormal;
+            span {
+                &:last-of-type {
+                    text-align: right;
+                }
+            }
+        }
+        .compute {
+            padding: 5px 10px;
+            border-top: 1px solid #e7e7e7;
+            line-height: 33px;
+            font-size: 13px;
+            p {
+                color: $fnormal !important;
+            }
+            .num {
+                color: $fweight;
+            }
+            .price {
+                color: $hred;
+                margin-left: 5px;
+                font-weight: bold;
+            }
+            .pay {
+                float: right;
+                @include btn(80px, 33px, 5px, 13px, $theme, #fff);
+            }
+        }
+    }

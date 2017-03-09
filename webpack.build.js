@@ -13,8 +13,8 @@ const config = {
     },
     output: { //输出目录
         path: __dirname + "/dist",
-        publicPath: "/",
-        filename: 'bundle[hash].js',
+        publicPath: "",
+        filename: '/js/bundle[hash].js',
     },
     module: {
         rules: [{
@@ -59,11 +59,15 @@ const config = {
         new HtmlWebpackPlugin({
             title: 'index',
             hash: false,
-            template: 'index.ejs', // Load a custom template (ejs by default see the FAQ for details)
+            template: 'index.ejs',
+            files: {
+                "css": ["style.css"]
+            }
         }),
         new ExtractTextPlugin('css/style[hash].css'),
         new CopyWebpackPlugin([
             { from: baseUrl + '/test.js', to: baseUrl + '/dist/test.js' },
+            { from: baseUrl + '/img', to: baseUrl + '/dist/img' },
         ]),
     ]
 };

@@ -1,0 +1,144 @@
+@mixin istyle($mr, $top) {
+    display: inline-block;
+    margin-right: 5px;
+    position: relative;
+    top: 3px;
+}
+
+.order-detail-body {
+    .desk-btn {
+        i {
+            @include istyle(5px, 3px);
+        }
+    }
+    .payment {
+        border: 1px solid #ff7623 !important;
+        color: #ff7623 !important;
+        i {
+            @extend .bg-payment-icon;
+        }
+    }
+    .wait {
+        border: 1px solid #ff7623 !important;
+        color: #ff7623 !important;
+        i {
+            @extend .bg-wait-icon;
+        }
+    }
+    .refund {
+        border: 1px solid $flight !important;
+        color: $flight !important;
+        i {
+            @extend .bg-refund-icon;
+        }
+    }
+    .complete {
+        border: 1px solid #76cf2e !important;
+        color: #76cf2e !important;
+        i {
+            @extend .bg-complete-icon;
+        }
+    }
+    .cancel {
+        border: 1px solid $flight !important;
+        color: $flight !important;
+        i {
+            @extend .bg-cancel-m-icon;
+        }
+    }
+    .refunding {
+        border: 1px solid #ff5352 !important;
+        color: #ff5352 !important;
+        i {
+            @extend .bg-refunding-icon;
+        }
+    }
+}
+
+.address-box {
+    background-color: #fff;
+    margin-bottom: 10px;
+    padding: 10px;
+    color: $fweight;
+    font-size: 13px;
+    .d-icon {
+        display: inline-block;
+        @extend .bg-address;
+        margin-right: 7px;
+        position: relative;
+        top: 4px;
+    }
+}
+
+.offline-icon {
+    @include istyle(5px, 4px);
+    @extend .bg-offline-icon;
+}
+
+.wx-icon {
+    @include istyle(5px, 4px);
+    @extend .bg-wx-icon;
+}
+
+.note {
+    padding: 10px;
+    font-size: 13px;
+    background-color: #faf8e6;
+    margin-bottom: 10px;
+    .left {
+        color: $fnormal;
+        position: relative;
+        &:after {
+            content: "";
+            border-right: 1px solid #d4d2c3;
+            position: absolute;
+            right: 0;
+            top: 4px;
+            height: 48px;
+        }
+        .note-icon {
+            margin: 0 20px 0 8px;
+            display: inline-block;
+            @extend .bg-note-icon;
+        }
+        .note-title {
+            text-align: center;
+            letter-spacing: 8px;
+        }
+    }
+    .txt {
+        padding-left: 10px;
+        color: $fweight;
+        line-height: 23px;
+    }
+}
+
+.context {
+    padding: 10px;
+    font-size: 13px;
+    label {
+        display: inline-block;
+        padding-right: 12px;
+        position: relative;
+        color: $flight;
+        overflow: hidden;
+        height: 23px;
+        &:before {
+            content: ":";
+            display: inline-block;
+            position: absolute;
+            right: 8px;
+        }
+    }
+    span {
+        color: $fweight;
+    }
+}
+
+.pay-money {
+    width: 100%;
+    background-color: $theme;
+    color: #fff;
+    text-align: center;
+}
+

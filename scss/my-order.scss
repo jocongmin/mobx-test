@@ -1,0 +1,8 @@
+.my-order-body {
+    @extend .tab-bar-fix;
+    .no-state {
+        .icon {
+            @extend .bg-order-empty;
+        }
+    }
+}

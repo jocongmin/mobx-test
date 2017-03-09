@@ -1,0 +1,43 @@
+$theme:#0ba9e6;
+$fweight:#333;
+$fnormal:#666;
+$flight:#999;
+$bcolor:#eaeaea;
+$hred:#ff5352;
+$navh:50px;
+$bgcol:#f8f8f8;
+
+@mixin btn($w,$h,$r,$fs,$c,$fc){
+	display: inline-block;
+	text-align: center;
+	width:$w;
+	height: $h;
+	line-height: $h;
+	border-radius: $r;
+	font-size: $fs;
+	background-color: $c;
+	color: $fc;
+}
+@mixin btn2($w,$h,$r,$fs,$c,$fc){
+	display: inline-block;
+	text-align: center;
+	width:$w;
+	height: $h;
+	line-height: $h;
+	border-radius: $r;
+	font-size: $fs;
+	background-color: $c;
+	border:1px solid $fc;
+	color: $fc;
+}
+@mixin btn3($w,$h,$r,$fs,$c,$fc){
+	display: inline-block;
+	text-align: center;
+	padding:$h $w;
+	line-height: $h;
+	border-radius: $r;
+	font-size: $fs;
+	background-color: $c;
+	color: $fc;
+}
+

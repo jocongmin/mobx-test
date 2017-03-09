@@ -1,0 +1,132 @@
+.act-home {
+    .home {
+        right: 27px;
+        top: 14px;
+        white-space: nowrap;
+        line-height: 23px;
+        font-size: 14px;
+        color: $theme;
+        background: none;
+    }
+}
+
+.act-items {
+    .items {
+        background: white;
+        .item {
+            padding: 10px;
+            @extend .border-bottom;
+            position: relative;
+            overflow: hidden;
+            .img-box {
+                position: relative;
+                overflow: hidden;
+                margin-right: 10px;
+                img {
+                    width: 140px;
+                    height: 85px;
+                }
+                .tip {
+                    position: absolute;
+                    right: -38px;
+                    top: 8px;
+                    width: 111px;
+                    height: 20px;
+                    color: white;
+                    background-color: #ff5352;
+                    transform: rotate(45deg) scale(0.8);
+                    text-align: center;
+                    line-height: 20px;
+                    &.yl {
+                        background-color: #ff7623;
+                    }
+                }
+            }
+            p {
+                color: $flight;
+                margin-bottom: -2px;
+            }
+            .info {
+                position: relative;
+                overflow: hidden;
+                .tit {
+                    font-size: 16px;
+                    color: $fweight;
+                    margin-bottom: 6px;
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                }
+                .lab {
+                    @extend .labs;
+                    padding-right: 10px;
+                    height: 12px;
+                    line-height: 18px;
+                    width: 36px;
+                }
+                .heads {
+                    position: absolute;
+                    bottom: 2px;
+                    img {
+                        width: 20px;
+                        height: 20px;
+                        display: inline-block;
+                    }
+                }
+            }
+            & {
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: -2px;
+                    right: 0;
+                }
+            }
+            &.state-gq {
+                &:after {
+                    @extend .bg-state-gq;
+                }
+            }
+            &.state-qx {
+                &:after {
+                    @extend .bg-state-qx;
+                }
+            }
+        }
+    }
+}
+
+.act-my-body {
+    @extend .tab-bar-fix;
+    .top-nav {
+        @extend .act-home;
+    }
+    @extend .act-items;
+    .items{
+        margin:0 10px;
+        background: none;
+        .item{
+            margin-bottom: 5px;
+            border-bottom: 0;
+            background: white;
+        }
+    }
+
+    .his-act {
+        margin-top: 5px;
+        .titbar {
+            font-size: 15px;
+            background-color: white;
+            padding-left: 7px;
+            padding: 10px 0;
+            border-bottom: 1px solid #f5f5f5;
+            em {
+                &:before {
+                    content: '|';
+                    color: $theme;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

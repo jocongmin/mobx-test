@@ -1,0 +1,130 @@
+.my-tickets-body {
+    @extend .tab-bar-fix ;
+    .tickets {
+        .item {
+            background-color: white;
+            margin: 0 10px;
+            margin-bottom: 5px;
+            position: relative;
+            overflow: hidden;
+            .box {
+                padding: 10px 0;
+                overflow: hidden;
+                height: 87px;
+            }
+            .img-box {
+                position: relative;
+            }
+            .state {
+                width: 43px;
+                height: 43px;
+                display: inline-block;
+                position: absolute;
+                top: 11px;
+                left: 16px;
+                border: 1px solid #fff;
+                border-radius: 100%;
+                text-align: center;
+                line-height: 43px;
+                color: white;
+                transform: rotate(-13deg);
+            }
+            img {
+                width: 67px;
+                height: 67px;
+                margin: auto 5px;
+            }
+            .info {
+                margin-right: 30px;
+                width: 64%;
+            }
+            p {
+                font-size: 13px;
+                color: $fweight;
+                margin-bottom: 0px;
+                line-height: 13px;
+                em {
+                    width: 68px;
+                    position: relative;
+                    height: 15px;
+                    line-height: 23px;
+                    @extend .labs;
+                }
+            }
+            .tit {
+                font-size: 16px;
+                color: $fnormal;
+                margin-bottom: 10px;
+                line-height: 18px;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .right-box {
+                position: absolute;
+                top: 0;
+                right: 0;
+                .p {
+                    position: relative;
+                    top: 8px;
+                    transform: rotate(46deg);
+                    display: inline-block;
+                    color: white;
+                }
+            }
+            .right-icon {
+                position: absolute;
+                right: -28px;
+                top: -28px;
+                transform: rotate(45deg);
+                width: 56px;
+                height: 56px;
+                background-color: $hred;
+            }
+            .more {
+                border-top: 1px solid $bcolor;
+                padding: 7px 5px;
+                .tip {
+                    padding: 2px 5px;
+                    margin-right: 2px;
+                    display: inline-block;
+                    border: 1px solid $theme;
+                    color: $theme;
+                    border-radius: 1px;
+                }
+                .yel {
+                    color: #ff9752;
+                    border-color: #ff9752;
+                }
+                .gre {
+                    color: #7ec677;
+                    border-color: #7ec677;
+                }
+                .wx {
+                    width: 24px;
+                    height: 24px;
+                    display: inline-block;
+                    background: url(../img/wx.png) no-repeat;
+                    float: right;
+                    position: relative;
+                    top: -3px;
+                    right: 5px;
+                }
+            }
+        }
+    }
+    .used {
+        .time-l {
+            margin-top: 25px;
+            margin-bottom: 0;
+        }
+        .wx {
+            background: none!important;
+            white-space: nowrap;
+            top: 3px!important;
+            right: 26px!important;
+            text-decoration: underline;
+            color: $flight;
+        }
+    }
+}

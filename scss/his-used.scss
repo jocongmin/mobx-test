@@ -1,0 +1,26 @@
+.his-used-body{
+	.items{
+
+	}
+	.item{
+		background: white;
+		padding:15px 10px;
+		color: $fnormal;
+		border-bottom: 1px solid $bcolor;
+		span{
+			color: $fweight;
+		}
+		.date{
+			margin-right: 3px;
+		}
+		.date,.time{
+			font-family: arial;
+		}
+		em{
+			font-family: arial;
+		}
+		.num{
+			float: right;
+		}
+	}
+}

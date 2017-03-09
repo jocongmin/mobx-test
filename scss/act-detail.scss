@@ -1,0 +1,333 @@
+.act-info-css {
+    background-color: white;
+    padding: 14px 10px;
+    p {
+        color: $flight;
+        font-size: 14px;
+        margin-bottom: 2px;
+    }
+    .tit {
+        font-size: 20px;
+        color: $fweight;
+        margin-bottom: 10px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .lab {
+        width: 56px;
+        @extend .labs;
+        height: 15px;
+        line-height: 22px;
+        padding-right: 10px;
+    }
+}
+
+.act-top-banner {
+    position: relative;
+    overflow: hidden;
+    img {
+        width: 100%;
+        height: 10rem;
+    }
+    .tip {
+        position: absolute;
+        top: -25px;
+        right: -2px;
+        @extend .bg-act-tip;
+        span {
+            color: white;
+            position: absolute;
+            top: 45px;
+            transform: rotate(47deg);
+            left: 27px;
+        }
+    }
+}
+
+.act-detail-body {
+    .top-banner {
+        @extend .act-top-banner;
+    }
+    .info {
+        @extend .act-info-css;
+    }
+    .heads {
+        background-color: white;
+        padding: 15px 10px;
+        border-top: 1px solid $bcolor;
+        margin-bottom: 5px;
+        img {
+            width: 20px;
+            height: 20px;
+            border-radius: 100%;
+            margin-right: 2px;
+        }
+        .btn {
+            @include btn(63px, 28px, 4px, 13px, $theme, white);
+            float: right;
+            position: relative;
+            top: -4px;
+        }
+        .btn.on {
+            background-color: $bcolor;
+        }
+    }
+    .tits {
+        font-size: 15px;
+        &:before {
+            content: '|';
+            color: #0ba9e6;
+            font-weight: bold;
+            display: inline-block;
+        }
+    }
+    .act-say {
+        background-color: white;
+        margin-bottom: 5px;
+        .titbar {
+            padding: 10px;
+            .t {
+                @extend .tits;
+            }
+            .icon {
+                @extend .bg-edit;
+                position: relative;
+                top: -4px;
+                float: right;
+            }
+        }
+        .para {
+            color: $flight;
+            padding: 0 10px;
+            padding-bottom: 10px;
+            text-align: center;
+            .p {
+                height: 3em;
+                overflow: hidden;
+            }
+            .p.on {
+                height: auto!important;
+            }
+            p {
+                color: $flight;
+                line-height: 17px;
+                text-align: left;
+                text-indent: 1em;
+            }
+        }
+        .more {
+            margin-top: 6px;
+            @extend .bg-down-d;
+        }
+    }
+    .message {
+        background-color: white;
+        .titbar {
+            padding: 10px 10px 0;
+            .t {
+                @extend .tits;
+            }
+        }
+        .items {
+            padding: 10px 0;
+            font-size: 13px;
+            img {
+                width: 40px;
+                height: 40px;
+                border-radius: 100%;
+                margin-right: 10px;
+            }
+            .item {
+                padding: 10px;
+                border-bottom: 1px solid $bcolor;
+                &:last-child {
+                    border-bottom: 0;
+                }
+            }
+            .nw {
+                font-size: 13px;
+                color: $fnormal;
+                margin-bottom: 10px;
+                margin-top: 3px;
+            }
+            .name {
+                font-size: 13px;
+                overflow: hidden;
+                white-space: nowrap;
+                width: 10em;
+                display: inline-block;
+                text-overflow: ellipsis;
+            }
+            .when {
+                float: right;
+                position: relative;
+                top: -2px;
+                em {
+                    font-family: arial;
+                }
+            }
+            .para {
+                color: $flight;
+                line-height: 17px;
+            }
+        }
+    }
+    .send-ms {
+        background-color: white;
+        border-top: 1px solid $bcolor;
+        .ipt {
+            border: 1px solid $bcolor;
+            display: inline-block;
+            height: 28px;
+            font-size: 14px;
+            color: $flight;
+            margin-top: 10px;
+            margin-left: 10px;
+            padding-left: 5px;
+        }
+        .btn {
+            font-size: 18px;
+            color: $theme;
+            padding: 10px;
+            line-height: 30px;
+        }
+    }
+    .close-act {
+        width: 50px;
+        height: 50px;
+        overflow: hidden;
+        background-color: #ff7623;
+        color: white;
+        display: inline-block;
+        border-radius: 100%;
+        position: fixed;
+        right: 10px;
+        bottom: 60px;
+        font-size: 12px;
+        line-height: 15px;
+        padding: 11px;
+        text-align: center;
+    }
+    .edit-act-tc {
+        width: 300px;
+        height: 304px;
+        border-radius: 5px;
+        @extend .fixcenter;
+        background-color: white;
+        z-index: 505;
+        .pad-l {
+            padding-left: 18px;
+            padding-right: 18px;
+        }
+        .titbar {
+            height: 55px;
+            font-size: 16px;
+            line-height: 55px;
+            border-bottom: 1px solid $bcolor;
+            @extend .pad-l;
+            .close {
+                @extend .bg-close-xx;
+                float: right;
+                margin-top: 19px;
+            }
+        }
+        $pad-t:11px;
+        .concat {
+            padding: $pad-t 18px;
+            @extend .border-bottom;
+            .ipt {
+                font-family: arial;
+                font-size: 14px;
+                color: $fnormal;
+            }
+        }
+        .lab {
+            color: $flight;
+            font-size: 14px;
+        }
+        .act-say-box {
+            @extend .pad-l;
+            margin-bottom: 15px;
+            .lab {
+                display: block;
+                margin-top: $pad-t;
+                margin-bottom: $pad-t;
+            }
+            textarea {
+                @extend .border;
+                height: 103px;
+                width: 100%;
+                overflow-y: scroll;
+                color: $fnormal;
+                line-height: 19px;
+                padding: 4px;
+            }
+        }
+        .btn {
+            display: block;
+            width: 100%;
+            text-align: center;
+            color: white;
+            background-color: $theme;
+            height: 50px;
+            border-bottom-left-radius: 5px;
+            border-bottom-right-radius: 5px;
+            font-size: 18px;
+            line-height: 50px;
+            position: absolute;
+            bottom: 0;
+        }
+    }
+    .cancel-tc {
+        @extend .fixcenter;
+        background-color: white;
+        width: 300px;
+        height: 250px;
+        z-index: 505;
+        border-radius: 5px;
+        .icon-box {
+            width: 200px;
+            height: 200px;
+            border-radius: 100%;
+            background: url(../img/state-line.png) -109px no-repeat;
+            background-color: $hred;
+            background-size: 202%;
+            margin: 63px auto auto;
+            text-align: center;
+            zoom: 0.5;
+            .icon {
+                display: inline-block;
+                margin-top: 49px;
+                margin-bottom: 15px;
+                @extend .bg-state-fail;
+                transform: scale(1.4);
+            }
+        }
+        .tip {
+            font-size: 17px;
+            margin-top: 15px;
+            text-align: center;
+        }
+        .btn-box {
+            font-size: 18px;
+            color: white;
+            text-align: center;
+            height: 50px;
+            line-height: 50px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            .btn {
+                background-color: $bcolor;
+                &:first-child {
+                    border-bottom-left-radius: 5px;
+                }
+                &:last-child {
+                    background-color: $hred;
+                    border-bottom-right-radius: 5px;
+                }
+            }
+        }
+    }
+}

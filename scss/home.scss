@@ -1,0 +1,153 @@
+.home-body {
+    margin-bottom: $navh;
+    background-color: $bgcol;
+    .banner {
+        overflow: hidden;
+        img {
+            width: 100%;
+            height: 6.75rem;
+        }
+    }
+    .height {
+        height: 9rem;
+        width: 100%;
+    }
+    .tickets-item {
+        .item {
+            @extend .height;
+            overflow: hidden;
+            position: relative;
+            color: white;
+            margin-bottom: 3px;
+            .b-img {
+                @extend .height;
+            }
+            .info {
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                left: 0%;
+                right: 0%;
+                background: rgba(0, 0, 0, 0.4);
+            }
+        }
+        .info {
+            .box {
+                display: inline-block;
+                width: 75%;
+                margin: auto;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+            }
+            em {
+                font-family: arial;
+            }
+            text-align: center;
+            padding-top: 2rem;
+            color: white;
+            p {
+                margin-bottom: 0.5rem;
+                white-space: nowrap;
+                overflow: hidden;
+                font-size: 0.6rem;
+                color: white;
+                text-overflow: ellipsis;
+            }
+            .tit {
+                font-size: 0.85rem;
+                margin-right: 10%;
+                margin-left: 10%;
+                margin-bottom: 0.25rem;
+            }
+            .heads {
+                margin-bottom: 0.5rem;
+                img {
+                    width: 1rem;
+                    height: 1rem;
+                    border-radius: 100%;
+                }
+            }
+            .s-btn {
+                padding: 0.3rem 0.5rem;
+                background: $theme;
+                display: inline-block;
+                border-radius: 4px;
+                font-size: 0.6rem;
+                color: white;
+            }
+            .s-btn.on {
+                color: $fnormal;
+                background: white;
+            }
+            .state-btn {
+                @extend .s-btn;
+                background: transparent;
+                border: 1px solid #fff;
+                color: white;
+                margin-top: 0.8rem;
+            }
+        }
+    }
+    .act-item {
+        @extend .tickets-item;
+        .info {
+            padding-top: 1.5rem;
+        }
+    }
+    .no-state {
+        .icon {
+            @extend .bg-no-state-icon-h;
+        }
+    }
+    .gx-tc {
+        @extend .fixcenter;
+        width: 211px;
+        height: 235px;
+        text-align: center;
+        background-color: white;
+        z-index: 530;
+        &:after {
+            content: '';
+            width: 100%;
+            height: 10px;
+            position: absolute;
+            bottom: -9px;
+            left: 0px;
+            background: url(../img/home-sjx.png) 11px repeat-x;
+            background-size: contain;
+        }
+        .top {
+            background: url(../img/home-gx-bg.png) no-repeat;
+            background-size: cover;
+            width: 260px;
+            height: 67px;
+            position: absolute;
+            top: -53px;
+            left: -25px;
+        }
+        .man {
+            background: url(../img/home-man.png) no-repeat;
+            background-size: cover;
+            width: 180px;
+            height: 127px;
+            margin: auto;
+            margin-top: 12px;
+        }
+        .info {
+            font-size: 17px;
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+            em{
+                font-family: arial;
+                color: $hred;
+            }
+        }
+        .btn {
+            margin-top: 10px;
+            @include btn(126px, 36px, 3px, 23px, $theme, white);
+        }
+    }
+}

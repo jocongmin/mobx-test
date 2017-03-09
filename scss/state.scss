@@ -1,0 +1,91 @@
+.state-body {
+    width: 100%;
+    height: 100%;
+    background: #fff;
+    overflow: hidden;
+    .icon-box {
+        width: 200px;
+        height: 200px;
+        border-radius: 100%;
+        background: url(../img/state-line.png) -109px no-repeat;
+        background-color: $hred;
+        background-size: 202%;
+        margin: 45px auto auto;
+        text-align: center;
+        .icon {
+            display: inline-block;
+            margin-top: 46px;
+            margin-bottom: 15px;
+            @extend .bg-state-fail;
+        }
+        span {
+            font-size: 18px;
+            display: block;
+            color: white;
+        }
+    }
+    .btn-box {
+        text-align: center;
+        margin-top: 48px;
+        .btn {
+            width: 134px;
+            height: 40px;
+            margin: auto 0.5rem;
+            line-height: 40px;
+            display: inline-block;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid #c9c9c9;
+            color: $flight;
+        }
+
+    }
+    &.fail{
+        .btn-box {
+            .btn:first-child {
+                border-color: $hred;
+                color: $hred;
+            }
+        }
+    }
+    &.suc {
+        .icon-box {
+            background-color: $theme;
+            .icon {
+                margin-top: 40px;
+                @extend .bg-state-suc;
+            }
+        }
+        .btn-box {
+            .btn:first-child {
+                border-color: $theme;
+                color: $theme;
+            }
+        }
+    }
+    &.result {
+        .icon-box {
+            background-color: #ff984c;
+            .icon {
+                margin-top: 49px;
+                @extend .bg-state-result;
+            }
+        }
+        .btn-box {
+            .btn:first-child {
+                border-color: $hred;
+                color: $hred;
+            }
+        }
+        .tip{
+            color: $flight;
+            font-size: 15px;
+            text-align: center;
+            position: relative;
+            top: 20px;
+            em{
+                color: $hred;
+            }
+        }
+    }
+}

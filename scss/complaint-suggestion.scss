@@ -1,0 +1,24 @@
+.complaint-suggestion-body {
+    textarea {
+        width: 100%;
+        height: 250px;
+        background-color: #fff;
+        padding: 10px;
+        border-bottom: 1px solid #e7e7e7;
+        font-size: 13px;
+        color: $fweight;
+        line-height: 22px;
+    }
+    ::-webkit-input-placeholder {
+        font-size: 13px;
+        color:$flight;
+    }
+    .btn {
+        @include btn(90%, 45px, 5px, 17px, #e0e0e0, #fff);
+        display: block;
+        margin: 10px auto 0;
+    }
+    .btn.on {
+        background-color: $theme !important;
+    }
+}

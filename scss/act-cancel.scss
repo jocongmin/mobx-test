@@ -1,0 +1,31 @@
+.act-cancel-body {
+    .info {
+        @extend .act-info-css;
+        .tit{
+        	color: $fnormal;
+        }
+    }
+    .reason {
+        background: white;
+        padding:10px;
+        margin-top: 5px;
+        .titbar {
+            em {
+                font-size: 15px;
+                @extend .shu;
+            }
+        }
+        .area{
+			border:1px solid $bcolor;
+			display: inline-block;
+			width: 100%;
+			margin-top: 10px;
+			padding:5px;
+			font-size: 14px;
+
+        }
+    }
+    .btn{
+    	@extend .basebtn;
+    }
+}

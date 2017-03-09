@@ -1,0 +1,409 @@
+.menu-body {
+    background: white;
+    height: 100%;
+    overflow: hidden;
+    .num-sl {
+        width: 80px;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        height: 24px;
+        &.no {
+            .les,
+            .nums {
+                visibility: collapse;
+            }
+        }
+        &.un {
+            .les {
+                background-color: #eee;
+                color: #ababab;
+                border: 1px solid #eee;
+            }
+        }
+        .les,
+        .mor {
+            width: 22px;
+            height: 22px;
+            border: 1px solid $theme;
+            display: inline-block;
+            text-align: center;
+            line-height: 25px;
+            font-size: 18px;
+            color: $theme;
+            background-color: white;
+            position: relative;
+            &:after {
+                content: '';
+                position: absolute;
+            }
+        }
+        .les {
+            &:after {
+                @extend .bg-less;
+                top: 9px;
+                left: 5px;
+            }
+        }
+        .mor {
+            &:after {
+                @extend .bg-more;
+                top: 4px;
+                left: 5px;
+            }
+        }
+        .nums {
+            width: 30px;
+            padding-top: 3px;
+            text-align: center;
+            line-height: 17px;
+        }
+    }
+    .main {
+        height: 100%;
+    }
+    .menu-box {
+        width: 80px;
+        font-size: 13px;
+        color: $fweight;
+        background-color: $bgcol;
+        border-right: 1px solid #f8f8f8;
+        height: 100%;
+        .item {
+            width: 100%;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            overflow: hidden;
+            border-bottom: 1px solid $bcolor;
+            position: relative;
+        }
+        .item.on {
+            background-color: white;
+            border-right: 1px solid #fff;
+            color: $theme;
+            &:before {
+                content: '';
+                width: 2px;
+                height: 40px;
+                background-color: $theme;
+                position: absolute;
+                left: 0;
+                top: 0;
+            }
+        }
+    }
+    .pro-box {
+        padding-left: 13px;
+        overflow-y: scroll;
+        margin-bottom: $navh;
+        .item {
+            padding: 14px 13px;
+            padding-left: 0;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid $bcolor;
+            // &:last-child{
+            //     border-bottom: 0;
+            // }
+            &.no {
+                .num-sl,
+                .stock {
+                    @extend .unsee;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    @extend .bg-no-kucun;
+                }
+            }
+            .box {
+                position: relative;
+            }
+            .img-box {
+                position: relative;
+                margin-right: 13px;
+                width: 91px;
+                height: 91px;
+                img {
+                    width: 89px;
+                    height: 89px;
+                }
+                .tip {
+                    position: absolute;
+                    right: 0;
+                    padding: 2px 5px;
+                    background-color: #14c685;
+                    color: white;
+                    display: inline-block;
+                    top: 6px;
+                }
+            }
+            .img-box.no {
+                &:after {
+                    content: '';
+                    left: 16px;
+                    position: absolute;
+                    top: 8px;
+                    @extend .bg-no-pro-state;
+                }
+                img {
+                    display: none;
+                }
+                .tip {
+                    display: none;
+                }
+            }
+            .info {
+                font-size: 14px;
+                position: relative;
+                em {
+                    font-family: arial;
+                }
+                .tit {
+                    line-height: 16px;
+                    height: 32px;
+                    overflow: hidden;
+                    display: -webkit-box;
+                    -webkit-line-clamp: 2;
+                    -webkit-box-orient: vertical;
+                    text-overflow: ellipsis;
+                }
+                .num-cg {
+                    position: absolute;
+                    bottom: 0;
+                    width: 100%;
+                    .stock {
+                        display: block;
+                        font-size: 12px;
+                        color: $flight;
+                        margin-bottom: 2px;
+                    }
+                    .pri {
+                        color: $hred;
+                        font-weight: bold;
+                    }
+                    .special {
+                        @include btn2(60px, 20px, 10px, 12px, #fff, $theme);
+                        position: absolute;
+                        top: 0px;
+                        right: 2px;
+                    }
+                }
+            }
+        }
+    }
+    
+    .cart-tc {
+        margin-bottom: $navh;
+        background-color: white;
+        height: auto;
+        z-index: 505;
+        .pd {
+            padding-left: 10px;
+            padding-right: 10px;
+        }
+        .titbar {
+            background-color: $bgcol;
+            height: 35px;
+            line-height: 35px;
+            font-size: 13px;
+            @extend .pd;
+            .tit {
+                color: $flight;
+                float: left;
+                &:before {
+                    content: '|';
+                    color: $theme;
+                    margin-right: 5px;
+                    display: inline-block;
+                }
+            }
+            .clear {
+                color: $fnormal;
+                float: right;
+                &:before {
+                    content: '';
+                    display: inline-block;
+                    @extend .bg-trash;
+                    position: relative;
+                    top: 3px;
+                    margin-right: 8px;
+                }
+            }
+        }
+        .items {
+            max-height: 250px;
+            overflow-y: scroll;
+        }
+        .item {
+            height: 50px;
+            line-height: 50px;
+            background-color: white;
+            margin-left: 10px;
+            padding-right: 10px;
+            position: relative;
+            border-bottom: 1px solid $bcolor;
+            &:last-child {
+                border-bottom: 0;
+            }
+            .name {
+                font-size: 13px;
+                color: $fweight;
+                float: left;
+                width: 50%;
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+            }
+            .pri {
+                color: $hred;
+                font-size: 14px;
+                float: left;
+                position: relative;
+                text-align: left;
+                width: 4.9em;
+                white-space: nowrap;
+                overflow: hidden;
+                top: 1px;
+                margin-left: 18px;
+                display: inline-block;
+            }
+            .num-sl {
+                right: 10px;
+                bottom: 12px;
+            }
+        }
+    }
+    .special-tc {
+        z-index: 505;
+        .p-left {
+            padding-left: 20px;
+            padding-right: 20px;
+        }
+        .close {
+            @extend .bg-close-xx;
+            float: right;
+            top: 20px;
+            position: relative;
+        }
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width:300px;
+        height: 250px;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        border-radius: 4px;
+        .pro-name {
+            height: 54px;
+            line-height: 54px;
+            font-size: 16px;
+            overflow: hidden;
+            border-bottom: 1px solid $bcolor;
+            @extend .p-left;
+            font-weight: bold;
+            .name {
+                width: 208px;
+                white-space: nowrap;
+                overflow: hidden;
+                display: inline-block;
+                text-overflow: ellipsis;
+            }
+        }
+        li {
+            height: 49px;
+            line-height: 50px;
+            border-bottom: 1px solid $bcolor;
+            font-size: 14px;
+            @extend .p-left;
+            color: $fnormal;
+            position: relative;
+            overflow: hidden;
+            &:last-child {
+                border-bottom: 0;
+            }
+        }
+        .btn {
+            background-color: $theme;
+            border-bottom-left-radius: 4px;
+            border-bottom-right-radius: 4px;
+            font-size: 15px;
+            text-align: center;
+            color: white;
+        }
+        .big {
+            .items {
+                float: right;
+            }
+            .item {
+                width: 54px;
+                height: 20px;
+                line-height: 20px;
+                text-align: center;
+                margin-right: 10px;
+                color: $flight;
+                font-size: 13px;
+                border: 1px solid $bcolor;
+                border-radius: 10px;
+                background-color: $bgcol;
+                display: inline-block;
+                &:last-child {
+                    margin-right: 0;
+                }
+                &.on {
+                    background-color: $theme;
+                    border: 1px solid $theme;
+                    color: white;
+                }
+            }
+        }
+        .num-sl {
+            right: 20px;
+            bottom: 10px;
+        }
+        .pri {
+            .price {
+                color: $hred;
+                font-size: 15px;
+                float: right;
+            }
+        }
+    }
+    .pro-tc {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 300px;
+        height: 300px;
+        z-index: 501;
+        transform: translate(-50%, -50%);
+        img {
+            width: 300px;
+            height: 300px;
+            border-radius: 4px;
+        }
+        .closei {
+            position: absolute;
+            width: 35px;
+            height: 35px;
+            right: -12px;
+            top: -12px;
+            background-color: $theme;
+            border-radius: 100%;
+            &:after {
+                content: '';
+                display: inline-block;
+                @extend .bg-close-xxi;
+                left: 9px;
+                top: 9px;
+                position: absolute;
+            }
+        }
+    }
+    .cart-mask {
+        z-index: 400;
+    }
+}

@@ -1,0 +1,184 @@
+    .fixed {
+        width: 100%;
+        position: fixed;
+        z-index: 500;
+        left: 0;
+        height: 50px;
+        bottom: 0;
+        text-align: center;
+    }
+    
+    .top-nav {
+        font-size: 17px;
+        top: 0;
+        background-color: #fff;
+        color: $fnormal;
+        border-bottom: 1px solid #d6d6d6;
+        padding: 0 10px;
+        line-height: 50px;
+        z-index: 300;
+        .title {
+            padding: 0 50px;
+        }
+        a {
+            position: absolute;
+            display: inline-block;
+            &:after {
+                content: "";
+                position: absolute;
+                width: 40px;
+                height: 40px;
+                top: 50%;
+                right: 50%;
+                margin: -20px -20px 0 0;
+            }
+        }
+        .back {
+            @extend .bg-back;
+            left: 10px;
+            top: 15px;
+        }
+        .home {
+            @extend .bg-house;
+            right: 10px;
+            top: 14px;
+        }
+    }
+    
+    .bottom-nav {
+        background-color: #fff;
+        border-top: 1px solid #d1d1d1;
+        .nav {
+            margin-top: 4px;
+            .item {
+                font-size: 0;
+                color: #b1b1b1;
+                span {
+                    display: block;
+                    font-size: 13px;
+                }
+                i {
+                    display: inline-block;
+                }
+                .home {
+                    @extend .bg-home;
+                }
+                .order {
+                    @extend .bg-order;
+                    margin-bottom: 4px;
+                }
+                .active {
+                    @extend .bg-active;
+                    margin-bottom: 4px;
+                }
+                .my {
+                    position: relative;
+                    top: -1px;
+                    @extend .bg-my;
+                }
+            }
+            .item.on {
+                span {
+                    color: $theme !important;
+                }
+                .home {
+                    @extend .bg-home-on;
+                }
+                .order {
+                    @extend .bg-order-on;
+                }
+                .active {
+                    @extend .bg-active-on;
+                }
+                .my {
+                    @extend .bg-my-on;
+                }
+            }
+        }
+    }
+    
+    .bottom-btn {
+        bottom: 0;
+        font-size: 18px;
+        background-color: #fff;
+        color: $fweight;
+        line-height: $navh;
+        .all {
+            .price {
+                color: $hred;
+                font-weight: bold;
+                font-size: 19px;
+            }
+        }
+        .wx-btn {
+            background-color: $flight;
+            color: #fff;
+        }
+        .wx-btn.on {
+            background-color: $theme !important;
+        }
+    }
+    
+    .menufooter {
+        background-color: white;
+        border-top: 1px solid $bcolor;
+        &:before {
+            content: '';
+            width: 60px;
+            height: 60px;
+            border-radius: 100%;
+            background-color: $bgcol;
+            border: 1px solid $bcolor;
+            position: absolute;
+            left: 15px;
+            top: -15px;
+        }
+        .flex2 {
+            background-color: $bgcol;
+            z-index: 9;
+        }
+        .cart-icon {
+            @extend .bg-cart-icon;
+            position: relative;
+            left: 27px;
+            top: 7px;
+            .num {
+                width: 13px;
+                height: 13px;
+                text-align: center;
+                line-height: 14px;
+                overflow: hidden;
+                border: 3px solid $hred;
+                background-color: $hred;
+                border-radius: 100%;
+                color: white;
+                display: inline-block;
+                position: absolute;
+                right: -8px;
+                top: -5px;
+                font-family: arial;
+            }
+        }
+        .pris {
+            color: $flight;
+            text-align: right;
+            margin-right: 15px;
+            line-height: -4+$navh;
+            font-weight: bold;
+            em {
+                color: $hred;
+                font-size: 16px;
+                margin-left: 5px;
+                position: relative;
+                top: 1px;
+                font-family: arial;
+                font-weight: bold;
+            }
+        }
+        .count {
+            background-color: $theme;
+            color: white;
+            line-height: $navh;
+            font-size: 18px;
+        }
+    }
