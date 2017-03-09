@@ -1,12 +1,12 @@
-var webpack = require('webpack');
+const webpack = require('webpack');
 const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CopyWebpackPlugin = require('copy-webpack-plugin');
-var developConfig = require('./webpack.start.js');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const developConfig = require('./webpack.start.js');
 const WebpackDelPlugin = require('webpack-del-plugin');
-var baseUrl = __dirname;
+const baseUrl = __dirname;
 const config = {
     entry: {
         app: ['./index.js']
@@ -45,7 +45,7 @@ const config = {
     },
     plugins: [
         new webpack.DefinePlugin({
-            'process.env.NODE_ENV': "production"
+            'process.env.NODE_ENV': '"production"'
         }),
         new webpack.optimize.UglifyJsPlugin({
             output: {

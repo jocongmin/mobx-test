@@ -1,8 +1,8 @@
-var webpack = require('webpack');
-var webpackUglifyJsPlugin = require('webpack-uglify-js-plugin');
+const webpack = require('webpack');
+const webpackUglifyJsPlugin = require('webpack-uglify-js-plugin');
 const path = require('path');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config = {
     entry: [
