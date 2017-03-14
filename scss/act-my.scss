@@ -97,21 +97,22 @@
 }
 
 .act-my-body {
+    @extend .main;
+    margin-top: 95px;
     @extend .tab-bar-fix;
     .top-nav {
         @extend .act-home;
     }
     @extend .act-items;
-    .items{
-        margin:0 10px;
+    .items {
+        margin: 0 10px;
         background: none;
-        .item{
+        .item {
             margin-bottom: 5px;
             border-bottom: 0;
             background: white;
         }
     }
-
     .his-act {
         margin-top: 5px;
         .titbar {

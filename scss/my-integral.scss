@@ -1,4 +1,5 @@
 .my-integral-body {
+    @extend .main;
     .top {
         background: url(../img/integral-bg.png) no-repeat;
         background-size: 100% 100%;

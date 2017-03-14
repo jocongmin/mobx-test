@@ -4,12 +4,27 @@ export default class MenuStore {
     @observable whichMenu;
     @observable itemsData;
     @observable menuItem;
+    @observable specialTc;
+    @observable cartTc;
+    @observable proTc;
     constructor() {
         this.whichMenu = 0;
         this.itemsData = [];
         this.fetchItemData();
         this.menuItem=[];
         this.fetchMenuItem();
+        this.specialTc=false;
+        this.cartTc=false;
+        this.proTc=false;
+    }
+    @action showSpecialTc(){
+      this.specialTc=!this.specialTc;
+    }
+    @action showCartTc(){
+      this.cartTc=!this.cartTc;
+    }
+    @action showProTc(){
+      this.proTc=!this.proTc;
     }
     @action changeProItems(s, e) {
         let tar = e.currentTarget;
@@ -57,21 +72,32 @@ export default class MenuStore {
                 "title": "香蕉香蕉看风景时刻打飞机的看法就开始觉得是开发技术",
                 "reset": reset,
                 "pri": pri+1,
-                "have": true
+                "have": true,
+                "special":false
             }, {
                 "img_src": "img/pro-img-demo.png",
                 "deposit": true,
                 "title": "香蕉香蕉看风景时刻打飞机的看法就开始觉得是开发技术",
                 "reset": reset+3,
                 "pri": pri,
-                "have": true
+                "have": true,
+                "special":false
             }, {
                 "img_src": "img/pro-img-demo.png",
                 "deposit": false,
                 "title": "香蕉香蕉看风景时刻打飞机的看法就开始觉得是开发技术",
                 "reset": reset,
                 "pri": pri+2,
-                "have": false
+                "have": false,
+                "special":false
+            }, {
+                "img_src": "img/pro-img-demo.png",
+                "deposit": false,
+                "title": "香蕉香蕉看风景时刻打飞机的看法就开始觉得是开发技术",
+                "reset": reset,
+                "pri": pri+2,
+                "have": true,
+                "special":true
             }
         ]
     }

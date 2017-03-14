@@ -1,4 +1,5 @@
 .act-list-body {
+    @extend .main;
     .top-nav {
         @extend .act-home;
     }

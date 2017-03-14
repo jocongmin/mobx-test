@@ -1,6 +1,7 @@
 .submit-order-body {
+    @extend .main;
     .desk-btn {
-        color:$theme !important;
+        color: $theme !important;
         .modify {
             display: inline-block;
             @extend .bg-modify;

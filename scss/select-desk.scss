@@ -1,4 +1,5 @@
 .select-desk-body {
+	@extend .main;
     .mark {
         color: $flight;
         padding-left: 10px;

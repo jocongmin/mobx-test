@@ -4,16 +4,20 @@ import {observable,action,computed,autorun} from "mobx";
 import React,{Component} from "react";
 import {Link} from "react-router";
 import {render} from "react-dom";
+
+@inject(['menuStore']) @observer
 export default class SpecialTc extends Component{
   constructor(props){
     super(props);
+    this.store=this.props.menuStore;
+    this.showSpecialTc=this.store.showSpecialTc.bind(this.store,event)
   }
   render(){
     return(
-      <div className="special-tc unsee">
+      <div className={this.store.specialTc?"special-tc":"special-tc unsee"}>
         <div className="pro-name">
           <span className="name">水果收到了开发建设的</span>
-          <span className="close" />
+        <span className="close" onClick={this.showSpecialTc}/>
         </div>
         <li className="big">
           <span className="lab">规格</span>

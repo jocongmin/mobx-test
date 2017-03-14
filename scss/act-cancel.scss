@@ -1,4 +1,5 @@
 .act-cancel-body {
+    @extend .main;
     .info {
         @extend .act-info-css;
         .tit{

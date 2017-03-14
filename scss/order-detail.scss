@@ -6,6 +6,7 @@
 }
 
 .order-detail-body {
+    @extend .main;
     .desk-btn {
         i {
             @include istyle(5px, 3px);

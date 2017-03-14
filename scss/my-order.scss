@@ -1,4 +1,6 @@
 .my-order-body {
+	@extend .main;
+	margin-top: 95px;
     @extend .tab-bar-fix;
     .no-state {
         .icon {

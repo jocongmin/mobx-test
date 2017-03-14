@@ -16,6 +16,7 @@ import ProTc from "./menu/proTc.js"
 export default class Menu extends Component{
   constructor(props){
     super(props);
+    this.store=this.props.menuStore;
   }
   render(){
     return(
@@ -35,6 +36,7 @@ export default class Menu extends Component{
               <SpecialTc/>
               <ProTc/>
               <div className="mask unsee" />
+            <div className={this.store.specialTc||this.store.proTc?"mask":"mask unsee"}></div>
         </div>
 
     )

@@ -30,86 +30,104 @@
     display: table-cell;
     width: 30px;
     height: 28px;
-    border: 1px solid #e1e1e1 !important;
+    border: 1px solid #e1e1e1;
     box-sizing: border-box;
     position: relative;
 }
 
 .tickets-body {
-    .main {
-        .top-img {
-            position: relative;
-            .mb {
-                position: absolute;
-                top: 0;
-                bottom: 0;
-                left: 0;
-                bottom: 0;
-                width: 100%;
-                background-color: rgba(0, 0, 0, .48);
-            }
-            .tip {
-                width: 100%;
-                position: absolute;
-                top: 50%;
-                transform: translateY(-50%);
-                p {
-                    color: #fff;
-                    text-align: center;
-                }
-                .title {
-                    font-size: 0.9rem;
-                }
-                .price {
-                    font-size: 0.75rem;
-                }
-            }
+    @extend .main;
+    .top-img {
+        position: relative;
+        .mb {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, .48);
         }
-        .content {
-            @include common;
+        .tip {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
             p {
-                line-height: 23px;
+                color: #fff;
+                text-align: center;
             }
-            span {
-                color: $fweight;
+            .title {
+                font-size: 0.9rem;
+            }
+            .price {
+                font-size: 0.75rem;
             }
         }
-        .count {
-            @include common;
-            align-items: center;
-            .box {
-                font-size: 0;
-                display: table;
-                .num {
-                    display: table-cell;
-                    width: 55px;
-                    height: 30px;
-                    line-height: 30px;
-                    border-top: 1px solid #e1e1e1 !important;
-                    border-bottom: 1px solid #e1e1e1 !important;
-                    text-align: center;
-                    font-size: 20px;
-                    border-radius: none;
+    }
+    .content {
+        @include common;
+        p {
+            line-height: 23px;
+        }
+        span {
+            color: $fweight;
+        }
+    }
+    .count {
+        @include common;
+        align-items: center;
+        .box {
+            font-size: 0;
+            display: table;
+            .num {
+                display: table-cell;
+                width: 45px;
+                height: 30px;
+                line-height: 30px;
+                text-align: center;
+                font-size: 20px;
+                border-radius: none;
+                color:$fnormal;
+            }
+            .reduce {
+                @include num;
+                &:after {
+                    content: "";
+                    @extend .bg-reduce;
+                    position: absolute;
+                    left: 7px;
+                    top: 45%;
                 }
-                .reduce {
-                    @include num;
-                    &:after {
-                        content: "";
-                        @extend .bg-reduce;
-                        position: absolute;
-                        left: 8px;
-                        top: 50%;
-                    }
+            }
+            .reduce.on {
+                border: 1px solid $theme !important;
+                &:after {
+                    content: "";
+                    @extend .bg-reduce-on;
+                    position: absolute;
+                    left: 7px;
+                    top: 45%;
                 }
-                .add {
-                    @include num;
-                    &:after {
-                        content: "";
-                        @extend .bg-add;
-                        position: absolute;
-                        left: 8px;
-                        top: 31%;
-                    }
+            }
+            .add {
+                @include num;
+                &:after {
+                    content: "";
+                    @extend .bg-add;
+                    position: absolute;
+                    left: 8px;
+                    top: 31%;
+                }
+            }
+            .add.on {
+                border: 1px solid $theme !important;
+                &:after {
+                    content: "";
+                    @extend .bg-add-on;
+                    position: absolute;
+                    left: 8px;
+                    top: 30%;
                 }
             }
         }

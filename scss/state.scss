@@ -3,6 +3,7 @@
     height: 100%;
     background: #fff;
     overflow: hidden;
+    @extend .main;
     .icon-box {
         width: 200px;
         height: 200px;

@@ -4,13 +4,16 @@ import {observable,action,computed,autorun} from "mobx";
 import React,{Component} from "react";
 import {Link} from "react-router";
 import {render} from "react-dom";
+
+@inject(['menuStore']) @observer
 export default class CartTc extends Component{
   constructor(props){
     super(props);
+    this.store=this.props.menuStore;
   }
   render(){
     return(
-      <div className="mask cart-mask unsee">
+      <div className={this.store.cartTc?'mask cart-mask':'unsee'}>
         <div className="cart-tc fixed">
           <div className="titbar clearfix">
             <span className="tit">购物车</span>

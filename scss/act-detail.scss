@@ -46,6 +46,7 @@
 }
 
 .act-detail-body {
+    @extend .main;
     .top-banner {
         @extend .act-top-banner;
     }
