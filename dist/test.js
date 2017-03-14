@@ -1,12 +1,14 @@
 var express = require('express'),
     app = express();
-app.get('*', function(req, res) {
-    var fileName = req.url;
-    console.log(fileName);
-    if (fileName == '/') {
-        res.sendFile(__dirname + '/index.html');
-    }else{
-    	res.sendFile(__dirname + fileName);
-    }
+var router=express.Router();
+app.get('/',function(req,res,next){
+	console.log(req,'sdflkjsdfkjreq')
+})
+router.use(function(req,res,next){
+	console.log('time',Date.now());
+	next();
 });
-app.listen(9999);
+router.use('/test',function(req,res,next){
+	console.log('testsdfsdfs')
+});
+app.listen(9999)

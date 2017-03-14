@@ -61,6 +61,7 @@
     }
     .main {
         height: 100%;
+        background: $bgcol;
     }
     .menu-box {
         width: 80px;
@@ -97,6 +98,7 @@
         padding-left: 13px;
         overflow-y: scroll;
         margin-bottom: $navh;
+        background: white;
         .item {
             padding: 14px 13px;
             padding-left: 0;

@@ -9,11 +9,14 @@ import Test from "./src/components/test.js";
 import Next from "./src/components/next.js";
 import New from "./src/components/new.js";
 import Forms from "./src/components/form.js";
+import Menu from "./src/components/menu.js";
 import store from "./src/store/store.js";
 
 const routes = (
   <Route component={App}>
-     <Route path="/" component={Forms}/>
+     <Route path="/" component={Menu}/>
+     <Route path="/menu" component={Menu}/>
+     <Route path="/form" component={Forms}/>
      <Route path="/new" component={New}/>
      <Route path="/test" component={Test}/>
      <Route path="/next" component={Next}/>
@@ -33,4 +36,3 @@ class App extends React.Component {
 
 
 render( < App />, document.getElementById('app'));
-

@@ -60,6 +60,11 @@
                 z-index: 8;
                 position: relative;
             }
+            &.on{
+                &:after{
+                    display: none;
+                }
+            }
         }
     }
     .items {

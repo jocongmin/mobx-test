@@ -399,6 +399,19 @@ span {
         $hred,
         #fff);
     }
+    &.loading {
+        .icon {
+            @extend .bg-state-loading-icon;
+            margin-bottom: 0;
+        }
+        .loading-icon {
+            @extend .bg-state-loading;
+            position: relative;
+            top: 4px;
+            left: -11px;
+            animation:loading 1s infinite linear;
+        }
+    }
 }
 
 .ways {
@@ -515,12 +528,13 @@ span {
         margin-top: 98px;
     }
 }
-.tip-tc{
-   @extend .fixcenter;
-   background-color: rgba(0,0,0,0.7);
-   font-size: 14px;
-   line-height: 20px;
-   color: white;
-   padding:8px 16px;
-   border-radius: 2px;
+
+.tip-tc {
+    @extend .fixcenter;
+    background-color: rgba(0, 0, 0, 0.7);
+    font-size: 14px;
+    line-height: 20px;
+    color: white;
+    padding: 8px 16px;
+    border-radius: 2px;
 }
