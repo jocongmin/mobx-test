@@ -12,12 +12,15 @@ export default class Item extends Component{
     super(props);
     this.store=this.props.menuStore;
     this.showSpecialTc=this.store.showSpecialTc.bind(this.store,event);
-    this.showProTc=this.store.showProTc.bind(this.store,event)
+    this.showProTc=this.store.showProTc.bind(this.store,event);
+  }
+  getData(val,id){
+    this.store.register(val,id);
   }
   changeRender(data,key){
     if(!data.special){
       return(
-        <NumChange key={key}/>
+        <NumChange id={data.id} getData={this.getData.bind(this)} key={key}/>
       )
     }
     return(
