@@ -14,7 +14,7 @@ const config = {
     output: { //输出目录
         path: __dirname + "/dist",
         publicPath: "",
-        filename: '/js/bundle[hash].js',
+        filename: 'bundle[hash].js',
     },
     module: {
         rules: [{
@@ -67,7 +67,7 @@ const config = {
         new ExtractTextPlugin('css/style[hash].css'),
         new CopyWebpackPlugin([
             { from: baseUrl + '/test.js', to: baseUrl + '/dist/test.js' },
-            { from: baseUrl + '/img', to: baseUrl + '/dist/img' },
+            { from: baseUrl + '/assets/img', to: baseUrl + '/dist/img' },
         ]),
     ]
 };

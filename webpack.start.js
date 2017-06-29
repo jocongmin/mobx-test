@@ -13,7 +13,7 @@ const config = {
     output: { //输出目录
         publicPath: "",
         path: __dirname,
-        filename: 'bundle.js',
+        filename: 'assets/bundle.js',
     },
     module: {
         rules: [{
@@ -33,7 +33,7 @@ const config = {
                 loader: "css-loader!autoprefixer-loader?{browsers:['last 6 Chrome versions', 'last 3 Safari versions', 'iOS >= 5', 'Android >= 4.0']}!sass-loader",
             }),
         }, {
-            test: /\.png$/,
+            test: /\.(png|jpg|gif)$/,
             use: {
                 loader: 'file-loader',
                 options: {
@@ -46,7 +46,7 @@ const config = {
         new webpack.optimize.OccurrenceOrderPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
-        new ExtractTextPlugin('css/style.css')
+        new ExtractTextPlugin('assets/css/style.css')
         /*new HtmlWebpackPlugin({
             title: 'index',
             hash:true,

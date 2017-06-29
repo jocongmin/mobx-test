@@ -1,5 +1,5 @@
-import "./js/auto_rem.js";
-import "./css/style.scss";
+import "./assets/js/auto_rem.js";
+import "./assets/css/style.scss";
 import React from "react";
 import { render } from "react-dom";
 import { observable, computed, autorun } from "mobx";
