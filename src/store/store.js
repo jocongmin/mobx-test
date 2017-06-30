@@ -4,6 +4,7 @@ import NewStore from "./new.js";
 import FormStore from "./form.js";
 import MenuStore from "./menu.js";
 import NumChange from "./comm/numChange.js"
+import GoTestStore from "./goTestStore.js"
 
 export default {
 	testStore:new TestStore(),
@@ -11,5 +12,6 @@ export default {
 	newStore:new NewStore(),
 	formStore:new FormStore(),
 	menuStore:new MenuStore(),
-	numChange:new NumChange()
+	numChange:new NumChange(),
+	goTestStore:new GoTestStore
 }
